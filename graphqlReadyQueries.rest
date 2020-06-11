@@ -1,0 +1,108 @@
+# Write your query or mutation here
+### CREATING USER
+POST http://localhost:4001
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation addingNewUser {
+  createUser(username: "sahilrajput03") {
+    username
+  }
+}
+###LOGGIN IN-
+POST http://localhost:4001
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation loggingTheUser {
+  login(username: "sahilrajput03", password: "secred") {
+    value
+  }
+}
+###
+POST http://localhost:4001
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhaGlscmFqcHV0MDMiLCJpZCI6IjVlZGM5ZjlhMWMwMGY5MTY2Y2FlMDg0NyIsImlhdCI6MTU5MTUzNDM1Mn0.MS2xenFCCL3F3RES_SalC7EBM8S6qfNZEkU36Xn19cc
+X-REQUEST-TYPE: GraphQL
+
+query findingMe {
+  me {
+    username
+    id
+    favoriteGenre
+  }
+}
+###
+POST http://localhost:4001
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhaGlscmFqcHV0MDMiLCJpZCI6IjVlZGM5ZjlhMWMwMGY5MTY2Y2FlMDg0NyIsImlhdCI6MTU5MTUzNDM1Mn0.MS2xenFCCL3F3RES_SalC7EBM8S6qfNZEkU36Xn19cc
+X-REQUEST-TYPE: GraphQL
+
+mutation addingA_Book {
+  addBook(
+    title: "Routella DangerSSs2"
+    author: "Joker MahSSaraj"
+    published: 2013
+    genres: ["wild", "fear"]
+  ) {
+    title
+    author {
+      name
+      born
+    }
+    published
+    genres
+  }
+}
+
+###ALL BOOKS
+POST http://localhost:4001
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhaGlscmFqcHV0MDMiLCJpZCI6IjVlZGM5ZjlhMWMwMGY5MTY2Y2FlMDg0NyIsImlhdCI6MTU5MTUzNDM1Mn0.MS2xenFCCL3F3RES_SalC7EBM8S6qfNZEkU36Xn19cc
+X-REQUEST-TYPE: GraphQL
+
+query query3 {
+  allBooks {
+    title
+    published
+    author {
+      name
+    }
+  }
+}
+
+###GETTING ALL AUTHORS
+POST http://localhost:4001
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhaGlscmFqcHV0MDMiLCJpZCI6IjVlZGM5ZjlhMWMwMGY5MTY2Y2FlMDg0NyIsImlhdCI6MTU5MTUzNDM1Mn0.MS2xenFCCL3F3RES_SalC7EBM8S6qfNZEkU36Xn19cc
+X-REQUEST-TYPE: GraphQL
+
+query allAuthors {
+  allAuthors {
+    name
+  }
+}
+###eDITING AUTHOR-
+POST http://localhost:4001
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhaGlscmFqcHV0MDMiLCJpZCI6IjVlZGM5ZjlhMWMwMGY5MTY2Y2FlMDg0NyIsImlhdCI6MTU5MTUzNDM1Mn0.MS2xenFCCL3F3RES_SalC7EBM8S6qfNZEkU36Xn19cc
+X-REQUEST-TYPE: GraphQL
+
+mutation addingA_Book_A_Author {
+  addBook(title: "t1", author: "a1", published: 234, genres: ["g1"]) {
+    title
+  }
+}
+
+###EDITING AUTHOR2-
+POST http://localhost:4001
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhaGlscmFqcHV0MDMiLCJpZCI6IjVlZGM5ZjlhMWMwMGY5MTY2Y2FlMDg0NyIsImlhdCI6MTU5MTUzNDM1Mn0.MS2xenFCCL3F3RES_SalC7EBM8S6qfNZEkU36Xn19cc
+X-REQUEST-TYPE: GraphQL
+
+mutation editingAuth {
+  editAuthor(name: "Chetan", setBornTo: 2020) {
+    name
+    born
+  }
+}

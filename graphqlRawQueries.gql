@@ -1,0 +1,53 @@
+# Write your query or mutation here
+### CREATING USER
+mutation addingNewUser {
+  createUser(username: "sahilrajput03") {
+    username
+  }
+}
+###LOGGIN IN-
+mutation loggingTheUser {
+  login(username: "sahilrajput03", password: "pass") {
+    value
+  }
+}
+###
+
+query findingMe {
+  me {
+    username
+    id
+    favoriteGenre
+  }
+}
+###
+mutation addingA_Book {
+  addBook(
+    title: "Routella DangerSSs2"
+    author: "Joker MahSSaraj"
+    published: 2013
+    genres: ["wild", "fear"]
+  ) {
+    title
+    author {
+      name
+      born
+    }
+    published
+    genres
+  }
+}
+
+mutation addingA_Book_A_Author {
+  addBook(title: "t1", author: "a1", published: 234, genres: ["g1"]) {
+    title
+  }
+}
+
+###EDITING AUTHOR2-
+mutation editingAuth {
+  editAuthor(name: "Chetan", setBornTo: 2020) {
+    name
+    born
+  }
+}

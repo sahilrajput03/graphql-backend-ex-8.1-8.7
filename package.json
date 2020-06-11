@@ -1,0 +1,19 @@
+{
+  "name": "ex-8.1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "library-backend.js",
+  "scripts": {
+    "start": "nodemon library-backend.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.13.0",
+    "graphql": "^15.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.15"
+  }
+}
